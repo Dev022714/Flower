@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #a8edea, #CF9FFF);
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background: #5D3FD3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background: #4B0082;
+}
+
+/* Flower Styles */
+.bouquet-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouquet {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+}
+
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: sway 4s infinite ease-in-out alternate;
+}
+
+/* Petal Animation */
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #E6E6FA, #5D3FD3);
+    border-radius: 50%;
+    animation: bloom 3s infinite alternate ease-in-out;
+}
+
+.petal:nth-child(1) { top: 10px; left: 25px; } /* Top */
+.petal:nth-child(2) { top: 30px; left: 0px; transform: rotate(-36deg); } /* Left top */
+.petal:nth-child(3) { top: 30px; left: 50px; transform: rotate(36deg); } /* Right top */
+.petal:nth-child(4) { top: 60px; left: 10px; transform: rotate(-72deg); } /* Bottom left */
+.petal:nth-child(5) { top: 60px; left: 40px; transform: rotate(72deg); } /* Bottom right */
+
+.center {
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, yellow, orange);
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Stem Animation */
+.stem {
+    width: 10px;
+    height: 120px;
+    background: linear-gradient(to bottom, #2e8b57, #006400);
+    position: absolute;
+    top: 100px;
+    z-index: -1;
+    animation: sway 4s infinite ease-in-out alternate;
+}
+
+/* Vase Styles */
+.vase {
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(to bottom, #8B4513, #5A3312);
+    position: absolute;
+    bottom: -210px;
+    border-radius: 20px 20px 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 0, 0.3);
+    animation: glow 5s infinite alternate ease-in-out;
+}
+
+.vase-neck {
+    width: 550px;
+    height: 30px;
+    background: #5A3312;
+    position: absolute;
+    top: -15px;
+    border-radius: 10px 10px 5px 5px;
+    z-index: -1;
+}
+
+/* Vase Name */
+.Vname {
+    font-size: 24px;
+    color: floralwhite;
+    font-family: "Brush Script MT", cursive;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframe Animations */
+@keyframes bloom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+@keyframes sway {
+    0% { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
+}
+
+@keyframes glow {
+    0% { box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(255, 255, 0, 0.1); }
+    100% { box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.3), 0px 0px 20px rgba(255, 255, 0, 0.4); }
+}
